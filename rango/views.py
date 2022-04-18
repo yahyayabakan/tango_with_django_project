@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from datetime import datetime
 
 def index(request):
-   # Query the database for a list of ALL categories currently stored.
+       # Query the database for a list of ALL categories currently stored.
    # Order the categories by the number of likes in descending order.
    # Retrieve the top 5 only -- or all if less than 5.
    # Place the list in our context_dict dictionary (with our boldmessage!)
@@ -22,10 +22,10 @@ def index(request):
    context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
    context_dict['categories'] = category_list
    context_dict['pages'] = page_list
-   response = render(request, 'rango/index.html', context=context_dict)
+   context_dict['extra'] = 'From the model solution on GitHub'
    visitor_cookie_handler(request)
-   context_dict['visits'] =  request.session['visits']      
-   return response
+         
+   return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
    context_dict = {'yourname': 'Yahya AYABAKAN'}
