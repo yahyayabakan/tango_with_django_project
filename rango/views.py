@@ -123,7 +123,7 @@ def add_page(request, category_name_slug):
    context_dict = {'form': form, 'category': category}
    return render(request, 'rango/add_page.html', context=context_dict)
 
-def register(request):
+"""def register(request):
    # A boolean value for telling the template
    # whether the registration was successful.
    # Set to False initially. Code changes value to
@@ -166,9 +166,9 @@ def register(request):
       user_form = UserForm()
       profile_form = UserProfileForm()
 
-   return render(request, 'rango/register.html', context= {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
+   return render(request, 'rango/register.html', context= {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})"""
 
-def user_login(request):
+"""def user_login(request):
    if request.method == 'POST':
       username = request.POST.get('username')
       password = request.POST.get('password')
@@ -184,16 +184,16 @@ def user_login(request):
          print(f"Invalid login details: {username}, {password}")
          return HttpResponse("Invalid login details supplied.")
    else:
-      return render(request, 'rango/login.html')
+      return render(request, 'rango/login.html')"""
 
 @login_required
 def restricted(request):
    return render(request, 'rango/restricted.html')
 
-@login_required
+"""@login_required
 def user_logout(request):
    logout(request)
-   return redirect(reverse('rango:index'))
+   return redirect(reverse('rango:index'))"""
 
 
 def visitor_cookie_handler(request):
